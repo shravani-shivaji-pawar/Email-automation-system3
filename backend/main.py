@@ -144,7 +144,7 @@ from app.vector_search import (
 app = FastAPI(title="AI Email Automation Agent")
 
 # CORS middleware
-_default_cors_origins = "http://localhost:5173,https://ai-email-automation-1.vercel.app"
+_default_cors_origins = "http://localhost:5173,https://emailsystem2.vercel.app"
 app.add_middleware(
     CORSMiddleware,
     allow_origins=os.getenv("CORS_ORIGINS", _default_cors_origins).split(","),
@@ -166,8 +166,8 @@ create_gmail_tokens_table()
 _DB_CONN = None
 
 # Google OAuth redirect URI (must match Google Cloud Console + frontend env)
-GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "https://ai-email-backend-r2bw.onrender.com/google/callback")
-FRONTEND_URL = os.getenv("FRONTEND_URL", "http://localhost:5173")
+GOOGLE_REDIRECT_URI = os.getenv("GOOGLE_REDIRECT_URI", "https://email-automation-system2.onrender.com")
+FRONTEND_URL = os.getenv("FRONTEND_URL", "https://emailsystem2.vercel.app")
 
 # ════════════════════════════════════════
 # THREAD SAFE SEND STATE
